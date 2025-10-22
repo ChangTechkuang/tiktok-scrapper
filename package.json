@@ -1,0 +1,19 @@
+{
+  "name": "bulktok",
+  "version": "2.1.0",
+  "description": "",
+  "main": "bulktok.js",
+  "scripts": {
+    "test": "node bulktok.js proflie url"
+  },
+  "keywords": [],
+  "author": "Karim ELsayed (karim0sec)",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "node-fetch": "^2.6.7",
+    "puppeteer": "^19.0.0",
+    "puppeteer-extra": "^3.3.4"
+  }
+}
