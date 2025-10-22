@@ -54,10 +54,10 @@ async function main() {
     console.log("Syntax error: \n\r use it like that: node bulktok https://www.tiktok.com/@profile")
     process.exit()
   }
-  var nVideos = parseInt(args[1])
+  // var nVideos = parseInt(args[1])
 
   await page.goto(userLink); //change this to user url page
-  let username = page.url().slice(23, ).replace(/[-:.\/*<>|?]/g, "");
+  // let username = page.url().slice(23, ).replace(/[-:.\/*<>|?]/g, "");
 
   //scroll down until no more videos
   await autoScroll(page);
