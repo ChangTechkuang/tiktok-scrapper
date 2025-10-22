@@ -25,8 +25,29 @@ async function main() {
     }
   })
 
-  const args = process.argv.slice(2)
-  const userLink = (args[0])
+  const readline = require('readline');
+
+  async function getUserInput(prompt) {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+    return new Promise(resolve => rl.question(prompt, answer => {
+      rl.close();
+      resolve(answer);
+    }))
+  }
+
+  let userLink = process.argv[2];
+
+  if (!userLink) {
+    userLink = await getUserInput("Enter TikTok profile link (e.g., https://www.tiktok.com/@profile): ");
+    if (!userLink) {
+      console.log("File link missing: \n\r Use it like this: node bulktok https://www.tiktok.com/@profile");
+      process.exit();
+    }
+  }
+
   if (userLink.includes("@")) {
     console.log("Getting links from " + userLink)
   } else {
